@@ -11,3 +11,15 @@ header#topHead {
 .lightbox {
     top: 0;
 }
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-container {
+    cursor: pointer;
+}
+a.social.fa-vk:hover {
+    background: #3b5997!important;
+    color: #fff!important;
+}
+
+a.social.fa-instagram:hover {
+    background: #3b5997!important;
+    color: #fff!important;
+}
