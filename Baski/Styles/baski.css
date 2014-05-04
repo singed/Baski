@@ -1,0 +1,13 @@
+﻿#wrapper.main-wrapper {
+    padding: 62px 0 0 0;
+}
+
+.tp-bannershadow.tp-shadow1 {
+    bottom: 0px;
+}
+header#topHead {
+    border-bottom: none;
+}
+.lightbox {
+    top: 0;
+}
