@@ -11,3 +11,11 @@ header#topHead {
 .lightbox {
     top: 0;
 }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: pointer;
+}
+
+.blog-timeline-load-more {
+    text-align: center;
+}

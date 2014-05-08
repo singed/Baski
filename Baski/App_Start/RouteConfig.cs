@@ -14,9 +14,14 @@ namespace Baski
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Video",
+                url: "Video",
+                defaults: new { controller = "Default", action = "Video" }
+            );
+            routes.MapRoute(
                 name: "Roster",
                 url: "Roster",
-                defaults: new {controller = "Default", action = "Roster"}
+                defaults: new { controller = "Default", action = "Roster" }
             );
 
             routes.MapRoute(

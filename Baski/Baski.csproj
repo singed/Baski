@@ -596,6 +596,7 @@
     <Content Include="Images\baski-logo-2.jpg" />
     <Content Include="Images\baski-logo.jpg" />
     <Content Include="Images\baski-slide-bkg-1.jpg" />
+    <Content Include="Images\BballCourt.png" />
     <Content Include="Images\bkg-1.jpg" />
     <Content Include="Images\bkg-dark.jpg" />
     <Content Include="Images\bkg.jpg" />
@@ -758,6 +759,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Default\Roster.cshtml" />
+    <Content Include="Views\Default\Video.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
