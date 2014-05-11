@@ -12,6 +12,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <ProjectView>ShowAllFiles</ProjectView>
+    <NameOfLastUsedPublishProfile>local</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
