@@ -19,3 +19,7 @@ header#topHead {
 .blog-timeline-load-more {
     text-align: center;
 }
+
+.fullwidthbanner-container.roundedcorners {
+    margin-bottom: 0px !important;
+}

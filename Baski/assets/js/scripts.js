@@ -57,9 +57,10 @@ var	$googlemap_latitude 	= -37.812344,
 		jQuery("a[data-toggle=tooltip]").tooltip();
 		
 		/** Fitvids [Youtube|Vimeo] **/
-		if(jQuery(".fullwidthbanner iframe").length < 1 && jQuery(".fullscreenbanner iframe").length < 1 && jQuery(".fullscreenvideo").length < 1) { // disable fitvids if revolution slider video is present!
-			jQuery("body").fitVids(); 
-		}
+		/*if(jQuery(".fullwidthbanner iframe").length < 1 && jQuery(".fullscreenbanner iframe").length < 1 && jQuery(".fullscreenvideo").length < 1) { // disable fitvids if revolution slider video is present!*/
+		jQuery("body").fitVids();
+	    jQuery("#revo-video-main").unFitVids();
+	    //}
 
 	}
 

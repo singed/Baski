@@ -760,6 +760,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Default\Roster.cshtml" />
     <Content Include="Views\Default\Video.cshtml" />
+    <Content Include="Views\Default\Statistics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
