@@ -392,6 +392,7 @@
     <Content Include="Images\Roster\Parfenchuk.jpg" />
     <Content Include="Images\Roster\Timofeev.jpg" />
     <Content Include="Images\Roster\Zemlyanskiy.jpg" />
+    <Content Include="Images\slidebg1.jpg" />
     <Content Include="Plugins\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Plugins\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Plugins\bootstrap\css\bootstrap.css" />
@@ -538,7 +539,7 @@
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
-    <Content Include="Views\Shared\Post.cshtml" />
+    <Content Include="Views\Shared\_Posts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
