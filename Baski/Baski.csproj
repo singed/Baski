@@ -374,13 +374,17 @@
     <Content Include="assets\plugins\superslides\test\superslides.html" />
     <Content Include="assets\plugins\superslides\test\superslides_test.js" />
     <Content Include="Global.asax" />
+    <Content Include="Images\baski-bronze-abl.jpg" />
     <Content Include="Images\baski-logo-2.jpg" />
     <Content Include="Images\baski-logo.jpg" />
     <Content Include="Images\baski-slide-bkg-1.jpg" />
+    <Content Include="Images\baski-the-team.jpg" />
     <Content Include="Images\bkg-1.jpg" />
     <Content Include="Images\bkg-dark.jpg" />
     <Content Include="Images\bkg.jpg" />
+    <Content Include="Images\defense-player.jpg" />
     <Content Include="Images\mulyk.jpg" />
+    <Content Include="Images\mylyk-defense.jpg" />
     <Content Include="Images\Roster\Antonuk.jpg" />
     <Content Include="Images\Roster\belyaev.jpg" />
     <Content Include="Images\Roster\Bezkorovayniy.jpg" />
@@ -540,6 +544,7 @@
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
     <Content Include="Views\Shared\_Posts.cshtml" />
+    <Content Include="Views\Shared\_Roster.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
