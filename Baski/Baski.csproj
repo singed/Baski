@@ -38,7 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.8\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Rainbow">
+      <HintPath>..\packages\Dapper.Rainbow.0.1.2\lib\net40\Dapper.Rainbow.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -374,7 +381,6 @@
     <Content Include="assets\plugins\superslides\test\superslides.html" />
     <Content Include="assets\plugins\superslides\test\superslides_test.js" />
     <Content Include="Global.asax" />
-    <Content Include="Images\baski-bronze-abl.jpg" />
     <Content Include="Images\baski-logo-2.jpg" />
     <Content Include="Images\baski-logo.jpg" />
     <Content Include="Images\baski-slide-bkg-1.jpg" />
@@ -382,7 +388,6 @@
     <Content Include="Images\bkg-1.jpg" />
     <Content Include="Images\bkg-dark.jpg" />
     <Content Include="Images\bkg.jpg" />
-    <Content Include="Images\defense-player.jpg" />
     <Content Include="Images\mulyk.jpg" />
     <Content Include="Images\mylyk-defense.jpg" />
     <Content Include="Images\Roster\Antonuk.jpg" />
@@ -391,6 +396,7 @@
     <Content Include="Images\Roster\bezverhiy.jpg" />
     <Content Include="Images\Roster\Bylym.jpg" />
     <Content Include="Images\Roster\Davydov.jpg" />
+    <Content Include="Images\Roster\Evdokimenko.jpg" />
     <Content Include="Images\Roster\Lazhechnikov.jpg" />
     <Content Include="Images\Roster\Mulyk.jpg" />
     <Content Include="Images\Roster\Parfenchuk.jpg" />
@@ -462,10 +468,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authentication\AccountService.cs" />
+    <Compile Include="Authentication\CustomAuthorize.cs" />
+    <Compile Include="Authentication\DataAccessor.cs" />
+    <Compile Include="Authentication\FormsAuthenticationService.cs" />
+    <Compile Include="Authentication\MembershipService.cs" />
+    <Compile Include="Authentication\ModelStateWrapper.cs" />
+    <Compile Include="Authentication\Models\AccountModels.cs" />
+    <Compile Include="Authentication\UserProfile.cs" />
+    <Compile Include="Authentication\ValidationService.cs" />
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -534,7 +555,9 @@
     <Content Include="assets\plugins\superslides\src\.jshintrc" />
     <Content Include="assets\plugins\superslides\superslides.jquery.json" />
     <Content Include="assets\plugins\superslides\test\.jshintrc" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Default\Roster.cshtml" />
     <Content Include="Views\Default\Video.cshtml" />
@@ -545,6 +568,8 @@
     <Content Include="Views\Shared\_FollowUs.cshtml" />
     <Content Include="Views\Shared\_Posts.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -554,10 +579,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Baski.Orm\Baski.Orm.csproj">
+      <Project>{1dfe7137-70ad-4ae2-9389-8bfb1ee27681}</Project>
+      <Name>Baski.Orm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Baski.Orm.Repositories;
 
 namespace Baski.Controllers
 {
-    public class DefaultController : Controller
+    public class DefaultController : BaseController
     {
         //
         // GET: /Defaul/
         public ActionResult Index()
         {
+            var posts = Repository.Articles.All();
+
             return View();
         }
 
