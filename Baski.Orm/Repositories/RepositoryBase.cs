@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using Baski.Orm.Model;
 
 namespace Baski.Orm.Repositories
 {
@@ -21,7 +20,6 @@ namespace Baski.Orm.Repositories
             cnn.Open();
 
             Db = BaskiDatabase.Init(cnn, commandTimeout: 2);
-            
         }
 
     }
