@@ -468,6 +468,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DefaultAdminController.cs" />
     <Compile Include="Authentication\AccountService.cs" />
     <Compile Include="Authentication\CustomAuthorize.cs" />
     <Compile Include="Authentication\DataAccessor.cs" />
@@ -477,7 +480,7 @@
     <Compile Include="Authentication\Models\AccountModels.cs" />
     <Compile Include="Authentication\UserProfile.cs" />
     <Compile Include="Authentication\ValidationService.cs" />
-    <Compile Include="Controllers\AccountController.cs">
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\AdminController.cs" />
@@ -487,6 +490,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ModelGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -562,14 +570,23 @@
     <Content Include="Views\Default\Roster.cshtml" />
     <Content Include="Views\Default\Video.cshtml" />
     <Content Include="Views\Default\Statistics.cshtml" />
+    <Content Include="Models\ModelGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelGenerator.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Article\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\DefaultAdmin\Index.cshtml" />
     <None Include="Properties\PublishProfiles\file system.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
     <Content Include="Views\Shared\_Posts.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -579,6 +596,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Filters\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
@@ -593,6 +611,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
