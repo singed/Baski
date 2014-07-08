@@ -14,6 +14,7 @@ namespace Baski.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+           
             context.MapRoute(
                "Admin_home",
                "Admin",

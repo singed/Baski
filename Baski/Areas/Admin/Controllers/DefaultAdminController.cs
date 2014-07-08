@@ -7,7 +7,7 @@ using Baski.Authentication;
 
 namespace Baski.Areas.Admin.Controllers
 {
-    [CustomAuthorize(Roles = "Administrator")]
+    //[CustomAuthorize(Roles = "Administrator")]
     public class DefaultAdminController : Controller
     {
         //

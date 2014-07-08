@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Baski.Orm.Repositories;
 
 namespace Baski.Areas.Admin.Controllers
 {
-    public class ArticleController : Controller
+    public class ArticleController : AdminBaseController
     {
         //
         // GET: /Admin/Article/
         public ActionResult Index()
         {
-            return View();
+            var articlesList = Repository.Articles.All();
+            return View("List", articlesList);
         }
 
         //
@@ -36,9 +38,12 @@ namespace Baski.Areas.Admin.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                return View();
             }
             catch
             {

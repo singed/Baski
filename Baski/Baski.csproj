@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\blank.html" />
     <Content Include="Areas\Admin\buttons.html" />
+    <Content Include="Areas\Admin\css\baski-admin.css" />
     <Content Include="Areas\Admin\css\bootstrap.css" />
     <Content Include="Areas\Admin\css\bootstrap.min.css" />
     <Content Include="Areas\Admin\css\plugins\dataTables\dataTables.bootstrap.css" />
@@ -509,6 +510,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultAdminController.cs" />
     <Compile Include="Authentication\AccountService.cs" />
     <Compile Include="Authentication\CustomAuthorize.cs" />
@@ -659,6 +661,7 @@
     <Content Include="Views\Shared\_Roster.cshtml" />
     <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
     <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
+    <Content Include="Views\Shared\LogOn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -670,7 +673,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Filters\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
