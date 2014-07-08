@@ -1,8 +1,13 @@
 ﻿@model Baski.Orm.Models.Article
+
 @{
-    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm()) 
+
+<h2>Редактирование</h2>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
@@ -53,7 +58,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Добавить" class="btn btn-default" />
+                <input type="submit" value="Сохранить" class="btn btn-default" />
             </div>
         </div>
     </div>

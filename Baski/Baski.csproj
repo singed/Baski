@@ -509,8 +509,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultAdminController.cs" />
     <Compile Include="Authentication\AccountService.cs" />
     <Compile Include="Authentication\CustomAuthorize.cs" />
@@ -653,6 +653,7 @@
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Views\Article\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\file system.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
@@ -672,12 +673,18 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\AdminBase\" />
     <Folder Include="Filters\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Baski.Helpers\Baski.Helpers.csproj">
+      <Project>{60399740-7de4-42ba-b638-f524ff030379}</Project>
+      <Name>Baski.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Baski.Orm\Baski.Orm.csproj">
       <Project>{1dfe7137-70ad-4ae2-9389-8bfb1ee27681}</Project>
       <Name>Baski.Orm</Name>

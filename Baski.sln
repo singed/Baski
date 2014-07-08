@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baski", "Baski\Baski.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baski.Orm", "Baski.Orm\Baski.Orm.csproj", "{1DFE7137-70AD-4AE2-9389-8BFB1EE27681}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baski.Helpers", "Baski.Helpers\Baski.Helpers.csproj", "{60399740-7DE4-42BA-B638-F524FF030379}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1DFE7137-70AD-4AE2-9389-8BFB1EE27681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DFE7137-70AD-4AE2-9389-8BFB1EE27681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DFE7137-70AD-4AE2-9389-8BFB1EE27681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60399740-7DE4-42BA-B638-F524FF030379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60399740-7DE4-42BA-B638-F524FF030379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60399740-7DE4-42BA-B638-F524FF030379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60399740-7DE4-42BA-B638-F524FF030379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

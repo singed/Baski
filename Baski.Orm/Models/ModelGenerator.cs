@@ -152,8 +152,11 @@ namespace Baski.Orm.Models
 	{
 		[Key]
 		public virtual int Id { get; set; }
-		public virtual string Title { get; set; }
-		public virtual string Text { get; set; }
+        [Required]
+        public virtual string Title { get; set; }
+        [Required]
+        public virtual string Text { get; set; }
+        [Required]
 		public virtual bool HasVideo { get; set; }
 		public virtual DateTime Date { get; set; }
 		public virtual string ResourceUrl { get; set; }

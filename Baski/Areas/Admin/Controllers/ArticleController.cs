@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Baski.Orm.Models;
 using Baski.Orm.Repositories;
 
 namespace Baski.Areas.Admin.Controllers
@@ -34,12 +35,21 @@ namespace Baski.Areas.Admin.Controllers
         //
         // POST: /Admin/Article/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "Title, Text, HasVideo, ResourceUrl")] Article article)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    article.Date = DateTime.Now;
+                    int? id = Repository.Articles.Insert(new
+                    {
+                        Date= article.Date,
+                        Title = article.Title,
+                        Text= article.Text,
+                        HasVideo = article.HasVideo,
+                        ResourceUrl = article.ResourceUrl
+                    });
                     return RedirectToAction("Index");
                 }
 
@@ -55,17 +65,25 @@ namespace Baski.Areas.Admin.Controllers
         // GET: /Admin/Article/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var article = Repository.Articles.Get(id);
+            return View(article);
         }
 
         //
         // POST: /Admin/Article/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, [Bind(Include = "Title, Text, Date, HasVideo, ResourceUrl")] Article article)
         {
             try
             {
-                // TODO: Add update logic here
+                Repository.Articles.Update(id, new
+                {
+                    Date = DateTime.Now,
+                    Title = article.Title,
+                    Text = article.Text,
+                    HasVideo = article.HasVideo,
+                    ResourceUrl = article.ResourceUrl
+                });
 
                 return RedirectToAction("Index");
             }
@@ -79,7 +97,8 @@ namespace Baski.Areas.Admin.Controllers
         // GET: /Admin/Article/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Repository.Articles.Delete(id);
+            return RedirectToAction("Index");
         }
 
         //
@@ -89,8 +108,6 @@ namespace Baski.Areas.Admin.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch
