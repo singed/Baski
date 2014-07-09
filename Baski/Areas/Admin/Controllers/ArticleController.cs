@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,28 +36,35 @@ namespace Baski.Areas.Admin.Controllers
         //
         // POST: /Admin/Article/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Title, Text, HasVideo, ResourceUrl")] Article article)
+        public ActionResult Create([Bind(Include = "Title, Text, Date, VideoUrl,ImageUrl")] Article article)
         {
             try
             {
+                string fileName = string.Empty;
+                if (Request.Files.Count > 0 )
+                {
+                    string path = Server.MapPath("~/images/Articles/");
+                    fileName = Path.GetFileName(Request.Files[0].FileName);
+                    Request.Files[0].SaveAs(path + fileName);
+                }
                 if (ModelState.IsValid)
                 {
-                    article.Date = DateTime.Now;
                     int? id = Repository.Articles.Insert(new
                     {
                         Date= article.Date,
                         Title = article.Title,
                         Text= article.Text,
-                        HasVideo = article.HasVideo,
-                        ResourceUrl = article.ResourceUrl
+                        VideoUrl = article.VideoUrl,
+                        ImageUrl = fileName
                     });
                     return RedirectToAction("Index");
                 }
 
                 return View();
             }
-            catch
+            catch (Exception ex)
             {
+                ModelState.AddModelError("error", ex.Message);
                 return View();
             }
         }
@@ -72,17 +80,30 @@ namespace Baski.Areas.Admin.Controllers
         //
         // POST: /Admin/Article/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, [Bind(Include = "Title, Text, Date, HasVideo, ResourceUrl")] Article article)
+        public ActionResult Edit(int id, [Bind(Include = "Title, Text, Date, VideoUrl, ImageUrl")] Article article)
         {
             try
             {
+                string fileName = string.Empty;
+                if (!string.IsNullOrEmpty(Request.Form["ImageFileName"]))
+                {
+                    fileName = Request.Form["ImageFileName"];
+                }
+
+                if (Request.Files.Count > 0 && string.IsNullOrEmpty(fileName))
+                {
+                    string path = Server.MapPath("~/images/Articles/");
+                    fileName = Path.GetFileName(Request.Files[0].FileName);
+                    Request.Files[0].SaveAs(path + fileName);
+                }
+                
                 Repository.Articles.Update(id, new
                 {
-                    Date = DateTime.Now,
+                    Date = article.Date,
                     Title = article.Title,
                     Text = article.Text,
-                    HasVideo = article.HasVideo,
-                    ResourceUrl = article.ResourceUrl
+                    VideoUrl = article.VideoUrl,
+                    ImageUrl = fileName
                 });
 
                 return RedirectToAction("Index");

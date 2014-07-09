@@ -13,17 +13,17 @@
         <th>
             Назание
         </th>
-        <th>
+        @*<th>
             Текст   
-        </th>
+        </th>*@
         <th>
-            Содержит видео
-        </th>
-        <th>
-            Дата
+            Дата публикации
         </th>
         <th>
             Адрес видео(youtube)
+        </th>
+        <th>
+            Картинка
         </th>
         <th></th>
     </tr>
@@ -33,23 +33,24 @@
     int id = item.Id;
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            <a href="/Admin/Article/Edit?id=@item.Id">@Html.DisplayFor(modelItem => item.Title)</a> 
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>*@
+        <td>
+            @item.Date.FormatDateTime()
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Text).ShortenText()
+            @Html.DisplayFor(modelItem => item.VideoUrl)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HasVideo)
+            @if (!string.IsNullOrEmpty(item.ImageUrl))
+            {
+                <img src="~/images/Articles/@item.ImageUrl" width="60" height="60" />
+            }
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResourceUrl)
-        </td>
-        <td>
-            <a href="/Admin/Article/Edit?id=@item.Id">Редактировать</a> |
-            @*@Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |*@
             <a href="/Admin/Article/Delete?id=@item.Id">Удалить</a>
             @*@Html.ActionLink("Удалить", "Delete", new { id=item.Id })*@
         </td>

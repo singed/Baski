@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Baski.Helpers
                 return text.Substring(0, 50) + "...";
             }*/
             return  text;
+        }
+
+        public static MvcHtmlString FormatDateTime(this DateTime value)
+        {
+            return new MvcHtmlString(value.ToString("d MMMM yyyy", CultureInfo.CurrentCulture));
         }
     }
 }
