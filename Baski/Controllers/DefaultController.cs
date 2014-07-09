@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Baski.Orm.Repositories;
+using Baski.ViewModels;
 
 namespace Baski.Controllers
 {
@@ -14,8 +15,11 @@ namespace Baski.Controllers
         public ActionResult Index()
         {
             var posts = Repository.Articles.All();
-
-            return View();
+            HomePageViewModel viewModel = new HomePageViewModel()
+            {
+                Articles = posts
+            };
+            return View(viewModel);
         }
 
         public ActionResult Roster()

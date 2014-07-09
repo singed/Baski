@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Baski.ViewModels.HomePageViewModel
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -102,60 +103,6 @@
                     </div>
 
                 </li>
-
-               @* <!-- SLIDE  -->
-                <li data-transition="zoomin" data-slotamount="7" data-masterspeed="600">
-                    <!-- MAIN IMAGE -->
-                    <img src="~/Images/slidebg1.jpg" alt="videobg1" data-bgposition="left top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 1 -->
-
-                    <div class="tp-caption medium_bg_darkblue sfr customout"
-                         data-x="135"
-                         data-y="178"
-                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                         data-speed="500"
-                         data-start="1600"
-                         data-easing="Power4.easeOut"
-                         data-endspeed="500"
-                         data-captionhidden="on"
-                         style="z-index: 2">
-                        Послематчевое интервью
-                    </div>
-
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption medium_bg_orange sfr customin customout"
-                         data-x="225"
-                         data-y="230"
-                         data-customin="x:50;y:-30;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:00;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
-                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
-                         data-start="1600"
-                         data-speed="800"
-                         data-easing="Expo.easeIn"
-                         data-endspeed="600">
-                        Денис Давыдов
-                    </div>
-
-                    <!-- LAYER NR. 7 -->
-                    <div id="revo-video-main" class="tp-caption customin customout"
-                         data-x="right" data-hoffset="-132"
-                         data-y="center" data-voffset="0"
-                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:5;scaleY:5;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                         data-speed="600"
-                         data-start="1000"
-                         data-easing="Power4.easeOut"
-                         data-endspeed="500"
-                         data-endeasing="Power4.easeOut"
-                         data-autoplay="false"
-                         data-autoplayonlyfirsttime="false"
-                         style="z-index: 8">
-                        <iframe src='http://www.youtube.com/embed/rD9cymLxReg?enablejsapi=1&html5=1&hd=1&wmode=opaque&controls=1&showinfo=0;rel=0;' width='720' height='390' style='width: 640px; height: 360px;'></iframe>
-                    </div>
-                </li>
-                <li data-transition="zoomin" data-slotamount="7" data-masterspeed="600">
-                    <img src="~/Images/mulyk.jpg" alt="slidebg1" data-bgfit="cover" data-bgrepeat="no-repeat">
-                </li>*@
             </ul>
             <div class="tp-bannertimer"></div>
         </div>
@@ -168,7 +115,10 @@
 
             <!-- center column -->
             <div class="col-md-9">
-                @Html.Partial("_Posts")
+                @foreach (var item in Model.Articles)
+                {
+                    Html.RenderPartial("Article", item);
+                }
             </div>
 
             <!-- right column -->

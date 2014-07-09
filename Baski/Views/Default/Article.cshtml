@@ -1,20 +1,32 @@
-﻿<hr class="half-margins" />
+﻿@using Baski.Configuration
+@using Baski.Helpers
+@model Baski.Orm.Models.Article
+
+<hr class="half-margins" />
 <!-- separator -->
 <!-- article summary -->
 <div class="row">
     <div class="col-md-4 text-center">
-        <iframe width="800" height="450" src="//www.youtube.com/embed/csSfWudm-Zw" frameborder="0" allowfullscreen></iframe>
+        @if (!string.IsNullOrEmpty(Model.VideoUrl))
+        {
+            <iframe width="800" height="450" src="//@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
+        }
+        else if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img class="img-responsive" src="@string.Format("{0}{1}", AppSettings.ArticlesImagesPath, Model.ImageUrl)" />
+        }
+
     </div>
     <div class="col-md-8">
-        <h4><a class="styleColor" href="magazine-single.html">ХБЛ 6 сезон. Матч за 3-е место. Баски - ЕПАМ</a></h4>
+        <h4><a class="styleColor" href="/Article/@Model.Id">@Model.Title</a></h4>
         <p>
-            Здесь может быть краткое описание шпилева.
-                            <small class="block styleSecondColor">7 декабря 2013</small>
+            @Model.Text
+            <small class="block styleSecondColor">@Model.Date.FormatDateTime()</small>
         </p>
     </div>
 </div>
 <!-- /article summary -->
-
+@*
 <hr class="half-margins" />
 <!-- separator -->
 <!-- article summary -->
@@ -71,5 +83,5 @@
 <div class="blog-timeline-load-more">
     <button class="btn btn-primary btn-lg">Показать еще</button>
 </div>
-<br class="half-margins">
+<br class="half-margins">*@
 <!-- /article summary -->

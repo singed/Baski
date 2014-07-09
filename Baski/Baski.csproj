@@ -532,11 +532,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\ModelGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -612,10 +607,6 @@
     <Content Include="Views\Default\Roster.cshtml" />
     <Content Include="Views\Default\Video.cshtml" />
     <Content Include="Views\Default\Statistics.cshtml" />
-    <Content Include="Models\ModelGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelGenerator.cs</LastGenOutput>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Article\List.cshtml" />
     <Content Include="Areas\Admin\Views\Article\Delete.cshtml" />
@@ -659,7 +650,7 @@
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
-    <Content Include="Views\Shared\_Posts.cshtml" />
+    <Content Include="Views\Default\Article.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
     <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
     <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
@@ -681,6 +672,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Baski.Configuration\Baski.Configuration.csproj">
+      <Project>{3e47a3ce-73e2-4cdd-86e0-190203e93d19}</Project>
+      <Name>Baski.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Baski.Helpers\Baski.Helpers.csproj">
       <Project>{60399740-7de4-42ba-b638-f524ff030379}</Project>
       <Name>Baski.Helpers</Name>
@@ -688,6 +683,10 @@
     <ProjectReference Include="..\Baski.Orm\Baski.Orm.csproj">
       <Project>{1dfe7137-70ad-4ae2-9389-8bfb1ee27681}</Project>
       <Name>Baski.Orm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Baski.ViewModels\Baski.ViewModels.csproj">
+      <Project>{1e592040-7608-4c7f-8970-62b3dd0bd60c}</Project>
+      <Name>Baski.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

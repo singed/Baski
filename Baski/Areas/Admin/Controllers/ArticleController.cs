@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Baski.Configuration;
 using Baski.Orm.Models;
 using Baski.Orm.Repositories;
 
@@ -16,6 +17,7 @@ namespace Baski.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var articlesList = Repository.Articles.All();
+
             return View("List", articlesList);
         }
 
@@ -41,9 +43,9 @@ namespace Baski.Areas.Admin.Controllers
             try
             {
                 string fileName = string.Empty;
-                if (Request.Files.Count > 0 )
+                if (Request.Files.Count > 0 && !string.IsNullOrEmpty(Request.Files[0].FileName))
                 {
-                    string path = Server.MapPath("~/images/Articles/");
+                    string path = Server.MapPath(AppSettings.ArticlesImagesPath);
                     fileName = Path.GetFileName(Request.Files[0].FileName);
                     Request.Files[0].SaveAs(path + fileName);
                 }
@@ -90,9 +92,9 @@ namespace Baski.Areas.Admin.Controllers
                     fileName = Request.Form["ImageFileName"];
                 }
 
-                if (Request.Files.Count > 0 && string.IsNullOrEmpty(fileName))
+                if (Request.Files.Count > 0 && !string.IsNullOrEmpty(Request.Files[0].FileName))
                 {
-                    string path = Server.MapPath("~/images/Articles/");
+                    string path = Server.MapPath(AppSettings.ArticlesImagesPath);
                     fileName = Path.GetFileName(Request.Files[0].FileName);
                     Request.Files[0].SaveAs(path + fileName);
                 }
