@@ -101,6 +101,7 @@
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Areas\Admin\forms.html" />
     <Content Include="Areas\Admin\grid.html" />
+    <Content Include="Areas\Admin\js\baski-admin.js" />
     <Content Include="Areas\Admin\js\bootstrap.js" />
     <Content Include="Areas\Admin\js\bootstrap.min.js" />
     <Content Include="Areas\Admin\js\demo\dashboard-demo.js" />
@@ -673,9 +674,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\AdminBase\" />
     <Folder Include="Filters\" />
-    <Folder Include="Helpers\" />
+    <Folder Include="Images\Articles\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

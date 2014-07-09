@@ -2,7 +2,7 @@
 @{
     Layout = "../Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Article", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -22,32 +22,31 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Text">Текст</label>
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Text, new{@class="form-control", @rows="5"})
+                @Html.TextAreaFor(model => model.Text, new { @class = "form-control", @rows = "15" })
                 @Html.ValidationMessageFor(model => model.Text)
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="HasVideo">Видео есть?</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HasVideo)
-                @Html.ValidationMessageFor(model => model.HasVideo)
-            </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.Date, new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="Text">Дата публикации</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Date)
                 @Html.ValidationMessageFor(model => model.Date)
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="ResourceUrl">ID видео(на yotube)</label>
+            <label class="control-label col-md-2" for="VideoUrl">ID видео(на yotube)</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ResourceUrl)
-                @Html.ValidationMessageFor(model => model.ResourceUrl)
+                @Html.EditorFor(model => model.VideoUrl)
+                @Html.ValidationMessageFor(model => model.VideoUrl)
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ImageUrl">Картинка</label>
+            <div class="col-md-10">
+                <input type="file" name="ImageUrl" />
+                @Html.ValidationMessageFor(model => model.ImageUrl)
             </div>
         </div>
 

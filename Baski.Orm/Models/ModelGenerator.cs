@@ -11,6 +11,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace Baski.Orm.Models
 {
@@ -155,11 +156,12 @@ namespace Baski.Orm.Models
         [Required]
         public virtual string Title { get; set; }
         [Required]
+        [AllowHtml]
         public virtual string Text { get; set; }
         [Required]
-		public virtual bool HasVideo { get; set; }
-		public virtual DateTime Date { get; set; }
-		public virtual string ResourceUrl { get; set; }
+        public virtual DateTime Date { get; set; }
+		public virtual string VideoUrl { get; set; }
+        public virtual string ImageUrl { get; set; }
 	}
 
     /// <summary>
