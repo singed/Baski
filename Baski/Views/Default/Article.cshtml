@@ -1,87 +1,29 @@
 ﻿@using Baski.Configuration
 @using Baski.Helpers
-@model Baski.Orm.Models.Article
+@model Baski.ViewModels.ArticleViewModel
 
 <hr class="half-margins" />
 <!-- separator -->
 <!-- article summary -->
 <div class="row">
     <div class="col-md-4 text-center">
-        @if (!string.IsNullOrEmpty(Model.VideoUrl))
+        @if (Model.HasVideo)
         {
-            <iframe width="800" height="450" src="//@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
+            <iframe width="800" height="450" src="@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
         }
-        else if (!string.IsNullOrEmpty(Model.ImageUrl))
+        else if (Model.HasImage)
         {
-            <img class="img-responsive" src="@string.Format("{0}{1}", AppSettings.ArticlesImagesPath, Model.ImageUrl)" />
+            <img class="img-responsive" src="@Model.ImageUrl" />
         }
 
     </div>
     <div class="col-md-8">
         <h4><a class="styleColor" href="/Article/@Model.Id">@Model.Title</a></h4>
         <p>
-            @Model.Text
-            <small class="block styleSecondColor">@Model.Date.FormatDateTime()</small>
+            @Model.Paragraphs.FirstOrDefault().ToMvcHtmlString();
+            <small class="block styleSecondColor">@Model.Date</small>
         </p>
+
     </div>
 </div>
-<!-- /article summary -->
-@*
-<hr class="half-margins" />
-<!-- separator -->
-<!-- article summary -->
-<div class="row">
-    <div class="col-md-4 text-center">
-        <iframe width="800" height="450" src="//www.youtube.com/embed/qifHAUFncOU" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="col-md-8">
-        <h4><a class="styleColor" href="magazine-single.html">ХБЛ 6 сезон. Тур 4. Баски - Энгри биммерс</a></h4>
-        <p>
-            Здесь может быть краткое описание шпилева.
-                            <small class="block styleSecondColor">7 декабря 2013</small>
-        </p>
-    </div>
-</div>
-<!-- /article summary -->
-
-
-<hr class="half-margins" />
-<!-- separator -->
-<!-- article summary -->
-<div class="row">
-    <div class="col-md-4 text-center">
-        <iframe width="800" height="450" src="//www.youtube.com/embed/xk6_JIuuLpI" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="col-md-8">
-        <h4><a class="styleColor" href="magazine-single.html">ХБЛ 6 сезон. Тур 5. Баски - Фенникс</a></h4>
-        <p>
-            Здесь может быть краткое описание шпилева.
-                            <small class="block styleSecondColor">15 декабря 2013</small>
-        </p>
-    </div>
-</div>
-<!-- /article summary -->
-
-
-<hr class="half-margins" />
-<!-- separator -->
-<!-- article summary -->
-<div class="row">
-    <div class="col-md-4 text-center">
-        <iframe src="//www.youtube.com/embed/bIv3CBRaJfg" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="col-md-8">
-        <h4><a class="styleColor" href="magazine-single.html">ХБЛ 6 сезон. Тур 5. Баски - МНТУ</a></h4>
-        <p>
-            Здесь может быть краткое описание шпилева.
-                            <small class="block styleSecondColor">23 ноября 2013</small>
-        </p>
-    </div>
-</div>
-
-<hr class="half-margins" />
-<div class="blog-timeline-load-more">
-    <button class="btn btn-primary btn-lg">Показать еще</button>
-</div>
-<br class="half-margins">*@
 <!-- /article summary -->

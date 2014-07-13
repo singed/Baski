@@ -9,6 +9,6 @@ namespace Baski.ViewModels
 {
     public class HomePageViewModel
     {
-        public IEnumerable<Article> Articles { get; set; }
+        public IEnumerable<ArticleViewModel> Articles { get; set; }
     }
 }

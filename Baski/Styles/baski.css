@@ -43,3 +43,9 @@ a.social.fa-vk:hover
     background: #597DA3!important;
     color: #fff!important;
 }
+.page-header.twitter-widget {
+    margin-top: 0;
+}
+.container.magazine.top-no-header.main-layout {
+    padding-top: 40px;
+}

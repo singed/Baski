@@ -511,7 +511,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultAdminController.cs" />
     <Compile Include="Authentication\AccountService.cs" />
     <Compile Include="Authentication\CustomAuthorize.cs" />
@@ -526,6 +526,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
@@ -608,8 +609,7 @@
     <Content Include="Views\Default\Video.cshtml" />
     <Content Include="Views\Default\Statistics.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Article\List.cshtml" />
-    <Content Include="Areas\Admin\Views\Article\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\List.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\DefaultAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -645,7 +645,7 @@
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Areas\Admin\Views\Article\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\file system.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
@@ -653,8 +653,10 @@
     <Content Include="Views\Default\Article.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
     <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
-    <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
     <Content Include="Views\Shared\LogOn.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Shared\_RevolutionSlider.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

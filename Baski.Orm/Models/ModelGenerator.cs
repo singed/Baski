@@ -159,6 +159,8 @@ namespace Baski.Orm.Models
         [AllowHtml]
         public virtual string Text { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public virtual DateTime Date { get; set; }
 		public virtual string VideoUrl { get; set; }
         public virtual string ImageUrl { get; set; }

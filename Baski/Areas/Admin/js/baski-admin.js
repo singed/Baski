@@ -4,5 +4,5 @@
         plugins: "table preview "
     });
 
-    $('input[id="Date"]').datepicker({ dateFormat: 'dd.mm.yy' });
+    /*$('input[id="Date"]').datepicker({ dateFormat: 'dd/mm/yy' });*/
 });

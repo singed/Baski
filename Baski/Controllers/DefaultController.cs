@@ -14,10 +14,10 @@ namespace Baski.Controllers
         // GET: /Defaul/
         public ActionResult Index()
         {
-            var posts = Repository.Articles.All();
+            var posts = Repository.Articles.All().OrderByDescending(x=>x.Date);
             HomePageViewModel viewModel = new HomePageViewModel()
             {
-                Articles = posts
+                Articles = posts.Select(x=>new ArticleViewModel(x))
             };
             return View(viewModel);
         }

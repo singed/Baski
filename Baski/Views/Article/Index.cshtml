@@ -1,0 +1,50 @@
+﻿@using System.Web.Configuration
+@using Baski.Configuration
+@using Baski.Helpers
+@model Baski.ViewModels.ArticleViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header class="page-title">
+    <h1>@Model.Title</h1>
+    <small class="block styleCoor fsize13">
+        <span class="label label-default light">@Model.Date</span>
+    </small>
+</header>
+
+<div class="divider half-margins">
+    <!-- divider -->
+</div>
+
+@if (Model.HasVideo)
+{
+    <iframe width="900" height="450" src="//@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
+}
+else if (Model.HasImage)
+{
+    <img class="img-responsive" src="@Model.ImageUrl"  width="900"/>
+}
+
+<hr class="half-margins" />
+<!-- optional gallery separator -->
+<!-- /optional gallery -->
+
+<article>
+    @for (int i = 0; i < Model.Paragraphs.Count(); i++)
+    {
+        if (i == 0)
+        {
+        <p class="dropcap">@Model.Paragraphs.ElementAt(i).ToMvcHtmlString()</p>
+        }
+        else
+        {
+        <p>@Model.Paragraphs.ElementAt(i).ToMvcHtmlString()</p>
+        }
+    }
+
+</article>
+
+
+
+

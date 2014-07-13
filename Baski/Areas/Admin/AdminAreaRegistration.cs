@@ -25,6 +25,7 @@ namespace Baski.Areas.Admin
                "Admin/Account/LogOn/{id}",
                new { action = "LogOn", controller="Account", id = UrlParameter.Optional }
            );
+          
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/",

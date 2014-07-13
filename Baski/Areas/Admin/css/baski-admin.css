@@ -1,3 +1,6 @@
 ﻿.input-validation-error  {
     border-color: #a94442;
 }
+.text-box.single-line {
+    width: 800px;
+}

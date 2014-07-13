@@ -10,33 +10,30 @@ using Baski.Orm.Repositories;
 
 namespace Baski.Areas.Admin.Controllers
 {
-    public class ArticleController : AdminBaseController
+    public class ArticlesController : AdminBaseController
     {
         //
         // GET: /Admin/Article/
         public ActionResult Index()
         {
-            var articlesList = Repository.Articles.All();
+            var articlesList = Repository.Articles.All().OrderByDescending(x=>x.Date);
 
             return View("List", articlesList);
         }
 
         //
-        // GET: /Admin/Article/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Admin/Article/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Admin/Article/Create
         [HttpPost]
         public ActionResult Create([Bind(Include = "Title, Text, Date, VideoUrl,ImageUrl")] Article article)
         {
