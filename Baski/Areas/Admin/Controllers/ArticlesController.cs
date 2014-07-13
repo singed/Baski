@@ -4,12 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Baski.Authentication;
 using Baski.Configuration;
 using Baski.Orm.Models;
 using Baski.Orm.Repositories;
 
 namespace Baski.Areas.Admin.Controllers
 {
+    [CustomAuthorize(Roles = "Administrator")]
     public class ArticlesController : AdminBaseController
     {
         //

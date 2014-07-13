@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Web.Mvc;
 using Baski.Authentication.Models;
-using Baski.Controllers;
 
-namespace Baski.Areas.Admin.Controllers
+namespace Baski.Controllers
 {
     public class AccountController : BaseController
     {
-        public ActionResult LogOn()
+        public ActionResult LogOn(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -25,10 +25,10 @@ namespace Baski.Areas.Admin.Controllers
             }
             catch (Exception)
             {
-                return LogOn();
+                return LogOn(returnUrl);
             }
 
-            return LogOn();
+            return LogOn(returnUrl);
         }
       
     }

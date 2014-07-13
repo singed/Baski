@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleViewModel.cs" />
+    <Compile Include="FooterViewModel.cs" />
     <Compile Include="HomePageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

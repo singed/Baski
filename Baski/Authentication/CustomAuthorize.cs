@@ -20,12 +20,14 @@ namespace Baski.Authentication
                /* filterContext.Result = new RedirectToRouteResult(new
                 RouteValueDictionary(new { controller = "Account", action = "LogOn",  }));
 */
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
+               /* filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary
                 {
                     {"controller" , "Account"}, 
                     {"action" , "LogOn"},
                     { "returnUrl", filterContext.HttpContext.Request.RawUrl}
-                });
+                });*/
+                string loginUrl = "/Account/LogOn?returnUrl=" + filterContext.HttpContext.Request.RawUrl;
+                filterContext.Result = new RedirectResult(loginUrl);
             }
         }
     }

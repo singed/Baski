@@ -84,8 +84,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\blank.html" />
-    <Content Include="Areas\Admin\buttons.html" />
     <Content Include="Areas\Admin\css\baski-admin.css" />
     <Content Include="Areas\Admin\css\bootstrap.css" />
     <Content Include="Areas\Admin\css\bootstrap.min.css" />
@@ -94,13 +92,10 @@
     <Content Include="Areas\Admin\css\plugins\social-buttons\social-buttons.css" />
     <Content Include="Areas\Admin\css\plugins\timeline\timeline.css" />
     <Content Include="Areas\Admin\css\sb-admin.css" />
-    <Content Include="Areas\Admin\flot.html" />
     <Content Include="Areas\Admin\font-awesome\css\font-awesome.css" />
     <Content Include="Areas\Admin\font-awesome\css\font-awesome.min.css" />
     <Content Include="Areas\Admin\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Areas\Admin\forms.html" />
-    <Content Include="Areas\Admin\grid.html" />
     <Content Include="Areas\Admin\js\baski-admin.js" />
     <Content Include="Areas\Admin\js\bootstrap.js" />
     <Content Include="Areas\Admin\js\bootstrap.min.js" />
@@ -119,12 +114,6 @@
     <Content Include="Areas\Admin\js\plugins\morris\morris.js" />
     <Content Include="Areas\Admin\js\plugins\morris\raphael-2.1.0.min.js" />
     <Content Include="Areas\Admin\js\sb-admin.js" />
-    <Content Include="Areas\Admin\login.html" />
-    <Content Include="Areas\Admin\morris.html" />
-    <Content Include="Areas\Admin\notifications.html" />
-    <Content Include="Areas\Admin\panels-wells.html" />
-    <Content Include="Areas\Admin\tables.html" />
-    <Content Include="Areas\Admin\typography.html" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\blog.css" />
     <Content Include="assets\css\color_scheme\blue.css" />
@@ -510,6 +499,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultAdminController.cs" />
@@ -522,10 +512,6 @@
     <Compile Include="Authentication\Models\AccountModels.cs" />
     <Compile Include="Authentication\UserProfile.cs" />
     <Compile Include="Authentication\ValidationService.cs" />
-    <Compile Include="Areas\Admin\Controllers\AccountController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -604,7 +590,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Default\Roster.cshtml" />
     <Content Include="Views\Default\Video.cshtml" />
     <Content Include="Views\Default\Statistics.cshtml" />
@@ -650,13 +636,14 @@
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
-    <Content Include="Views\Default\Article.cshtml" />
+    <Content Include="Views\Shared\_Articles.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\LogOn.cshtml" />
     <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
     <Content Include="Views\Shared\LogOn.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Shared\_RevolutionSlider.cshtml" />
+    <Content Include="Views\Shared\_Layout.Sidebar.cshtml" />
+    <Content Include="Views\Shared\_VkWidgetNews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

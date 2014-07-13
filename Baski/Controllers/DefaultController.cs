@@ -36,5 +36,12 @@ namespace Baski.Controllers
         {
             return View();
         }
+
+        public ActionResult Footer()
+        {
+            FooterViewModel model = new FooterViewModel();
+            model.Articles = Repository.Articles.All().OrderByDescending(x=>x.Date).Select(x=>new ArticleViewModel(x));
+            return View(model);
+        }
     }
 }

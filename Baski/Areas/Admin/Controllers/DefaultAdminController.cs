@@ -7,14 +7,14 @@ using Baski.Authentication;
 
 namespace Baski.Areas.Admin.Controllers
 {
-    //[CustomAuthorize(Roles = "Administrator")]
+    [CustomAuthorize(Roles = "Administrator")]
     public class DefaultAdminController : Controller
     {
         //
         // GET: /Admin/Default/
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Articles");
         }
 	}
 }

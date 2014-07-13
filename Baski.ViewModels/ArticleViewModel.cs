@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Baski.Configuration;
 using Baski.Helpers;
 using Baski.Orm.Models;
@@ -18,7 +20,8 @@ namespace Baski.ViewModels
         public MvcHtmlString Date { get; set; }
         public string VideoUrl { get; set; }
         public string ImageUrl { get; set; }
-        
+        public string RouteUrl { get; set; }
+
         public IEnumerable<string> Paragraphs { get; set; }
 
         public bool HasVideo

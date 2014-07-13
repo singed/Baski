@@ -49,29 +49,18 @@
     <div id="wrapper" class="main-wrapper">
         <section class="container magazine top-no-header main-layout">
             <div class="row">
-               
                 <!-- center column -->
-                <div class="col-md-9">
                     @RenderBody()
-                </div>
-
-                <!-- right column -->
-                <div class="col-md-3">
-                    @Html.Partial("_TwitterWidget")
-
-                    @Html.Partial("_FollowUs")
-                </div>
-                <!-- /right column -->
             </div>
         </section>
 
 
-        @Html.Partial("_Roster")
+        @*@Html.Partial("_Roster")*@
 
 
     </div>
     <!-- /WRAPPER -->
-    @Html.Partial("_Footer")
+    @{ Html.RenderAction("Footer", "Default");}
     <!-- Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="assets/images/boxed_background/1.jpg"  -->
     <!-- TOP NAV -->
 

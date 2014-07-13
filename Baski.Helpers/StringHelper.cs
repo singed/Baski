@@ -24,7 +24,7 @@ namespace Baski.Helpers
 
         public static MvcHtmlString FormatDateTime(this DateTime value)
         {
-            return new MvcHtmlString(value.ToString("d MMMM yyyy", CultureInfo.CurrentCulture));
+            return new MvcHtmlString(value.ToString("d MMMM yyyy", CultureInfo.CreateSpecificCulture("ru-RU")));
         }
 
         /// <summary>

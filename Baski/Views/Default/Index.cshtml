@@ -1,11 +1,12 @@
 ﻿@model Baski.ViewModels.HomePageViewModel
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.Sidebar.cshtml";
 }
 @Html.Partial("_RevolutionSlider")
 @foreach (var item in Model.Articles)
 {
-    Html.RenderPartial("Article", item);
+    Html.RenderPartial("_Articles", item);
 }
+<hr class="half-margins" />
 <!-- /Articles -->

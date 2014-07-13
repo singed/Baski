@@ -14,17 +14,18 @@ namespace Baski.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+            context.MapRoute(
+            "Admin_account",
+            "Account/LogOn/{returnUrl}",
+            new { action = "LogOn", controller = "Account", id = UrlParameter.Optional }
+        );
            
             context.MapRoute(
                "Admin_home",
                "Admin",
                new { action = "Index", controller = "DefaultAdmin", id = UrlParameter.Optional }
            );
-            context.MapRoute(
-               "Admin_account",
-               "Admin/Account/LogOn/{id}",
-               new { action = "LogOn", controller="Account", id = UrlParameter.Optional }
-           );
+          
           
             context.MapRoute(
                 "Admin_default",
