@@ -20,7 +20,8 @@
 
     @Styles.Render("~/bundles/css")
     <!-- Morenizr -->
-    <script type="text/javascript" src="~/assets/plugins/modernizr.min.js"></script>
+    @*<script type="text/javascript" src="~/assets/plugins/modernizr.min.js"></script>*@
+    <script src='@Scripts.Url("~/bundles/modernizr")' async> </script>
 </head>
 <body class="boxed pattern10">
     @Html.Partial("_Header")

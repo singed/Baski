@@ -30,6 +30,8 @@ namespace Baski.App_Start
                 .Include("~/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js")
                 .Include("~/assets/js/slider_revolution.js");
 
+            var modernizr = new ScriptBundle("~/bundles/modernizr")
+                .Include("~/assets/plugins/modernizr.min.js");
 
             var stylesBundle = new StyleBundle("~/bundles/css")
                 .Include("~/assets/plugins/bootstrap/css/bootstrap.min.css", new CssRewriteUrlTransform())
@@ -48,6 +50,7 @@ namespace Baski.App_Start
                 .Include("~/assets/plugins/revolution-slider/css/settings.css", new CssRewriteUrlTransform())
                 .Include("~/Styles/baski.css");
             
+            bundles.Add(modernizr);
             bundles.Add(scriptsBundle);
             bundles.Add(stylesBundle);
         }
