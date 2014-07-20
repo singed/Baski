@@ -1,0 +1,40 @@
+﻿@model Baski.Orm.Models.Widget
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Create", "Widgets", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Статьи</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Title">Название виджета</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Text">Содержимое</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.InnerHtml, new { @class = "form-control", @rows = "15" })
+                @Html.ValidationMessageFor(model => model.InnerHtml)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Добавить" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Назад", "Index")
+</div>

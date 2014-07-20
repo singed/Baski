@@ -14,5 +14,6 @@ namespace Baski.Orm
         public Table<Player> Players { get; set; }
         public Table<Game> Games { get; set; }
         public Table<Statistic> Statistics { get; set; }
+        public Table<Widget> Widgets { get; set; }
     }
 }

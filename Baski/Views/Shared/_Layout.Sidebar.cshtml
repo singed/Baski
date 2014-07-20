@@ -57,6 +57,7 @@
 
                 <!-- right column -->
                 <div class="col-md-3">
+                    @{ Html.RenderAction("Sidebar", "Widget"); }
                     @Html.Partial("_TwitterWidget")
                     @Html.Partial("_VkWidgetNews")
 

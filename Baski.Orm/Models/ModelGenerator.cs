@@ -167,6 +167,20 @@ namespace Baski.Orm.Models
 	}
 
     /// <summary>
+    /// A class which represents the Widget table.
+    /// </summary>
+    [Table("Widget")]
+    public partial class Widget
+    {
+        [Key]
+        public virtual int Id { get; set; }
+        [Required]
+        public virtual string Name { get; set; }
+        [Required]
+        [AllowHtml]
+        public virtual string InnerHtml { get; set; }
+    }
+    /// <summary>
     /// A class which represents the vw_aspnet_Applications view.
     /// </summary>
 	[Table("vw_aspnet_Applications")]

@@ -1,0 +1,33 @@
+﻿@using Baski.Helpers
+@model IEnumerable<Baski.Orm.Models.Widget>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+} 
+
+<p>
+    <br/>
+    <a href="/Admin/Widgets/Create" type="button" class="btn btn-primary btn-sm">Создать новый</a>
+</p>
+<table class="table table-striped table-bordered table-hover dataTable no-footer">
+    <tr>
+        <th>
+            Название
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    int id = item.Id;
+    <tr>
+        <td>
+            <a href="/Admin/Widgets/Edit?id=@item.Id">@Html.DisplayFor(modelItem => item.Name)</a> 
+        </td>
+       
+        <td>
+            <a href="/Admin/Widgets/Delete?id=@item.Id">Удалить</a>
+        </td>
+    </tr>
+}
+
+</table>

@@ -12,5 +12,10 @@ namespace Baski.Configuration
         {
             get { return GetSettingValue("ArticlesImagesPath"); }
         }
+
+        public static string SidebarWidgetId
+        {
+            get { return GetSettingValue("SidebarWidgetId"); }
+        }
     }
 }

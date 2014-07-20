@@ -1,0 +1,9 @@
+﻿@using Baski.Helpers
+@model Baski.Orm.Models.Widget
+@{
+    Layout = null;
+}
+<label>@Model.Name</label>
+<div class="table-responsive" style="overflow: auto">
+    @Model.InnerHtml.ToMvcHtmlString()
+</div>
