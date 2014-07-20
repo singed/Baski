@@ -45,33 +45,26 @@
       <HintPath>..\packages\Dapper.Rainbow.0.1.2\lib\net40\Dapper.Rainbow.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Webpages">
       <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Webpages.Razor">
       <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
@@ -510,61 +503,6 @@
     <Content Include="Images\Roster\Timofeev.jpg" />
     <Content Include="Images\Roster\Zemlyanskiy.jpg" />
     <Content Include="Images\slidebg1.jpg" />
-    <Content Include="Plugins\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="Plugins\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="Plugins\bootstrap\css\bootstrap.css" />
-    <Content Include="Plugins\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Plugins\bootstrap\js\bootstrap.js" />
-    <Content Include="Plugins\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Plugins\jquery-2.0.3.min.js" />
-    <Content Include="Plugins\jquery.appear.js" />
-    <Content Include="Plugins\jquery.backstretch.min.js" />
-    <Content Include="Plugins\jquery.cookie.js" />
-    <Content Include="Plugins\jquery.easing.1.3.js" />
-    <Content Include="Plugins\jquery.isotope.js" />
-    <Content Include="Plugins\knob\excanvas.js" />
-    <Content Include="Plugins\knob\index.html" />
-    <Content Include="Plugins\knob\js\jquery.knob.js" />
-    <Content Include="Plugins\knob\secretplan.jpg" />
-    <Content Include="Plugins\magnific-popup\jquery.magnific-popup.js" />
-    <Content Include="Plugins\magnific-popup\jquery.magnific-popup.min.js" />
-    <Content Include="Plugins\magnific-popup\magnific-popup.css" />
-    <Content Include="Plugins\masonry.js" />
-    <Content Include="Plugins\modernizr.min.js" />
-    <Content Include="Plugins\owl-carousel\AjaxLoader.gif" />
-    <Content Include="Plugins\owl-carousel\grabbing.png" />
-    <Content Include="Plugins\owl-carousel\owl.carousel.css" />
-    <Content Include="Plugins\owl-carousel\owl.carousel.js" />
-    <Content Include="Plugins\owl-carousel\owl.carousel.min.js" />
-    <Content Include="Plugins\owl-carousel\owl.theme.css" />
-    <Content Include="Plugins\owl-carousel\owl.transitions.css" />
-    <Content Include="Plugins\stellar\jquery.stellar.js" />
-    <Content Include="Plugins\stellar\jquery.stellar.min.js" />
-    <Content Include="Plugins\styleswitcher\sample.html" />
-    <Content Include="Plugins\styleswitcher\styleswitcher.css" />
-    <Content Include="Plugins\styleswitcher\styleswitcher.js" />
-    <Content Include="Plugins\superslides\dist\jquery.superslides.js" />
-    <Content Include="Plugins\superslides\dist\jquery.superslides.min.js" />
-    <Content Include="Plugins\superslides\dist\stylesheets\superslides.css" />
-    <Content Include="Plugins\superslides\Gruntfile.js" />
-    <Content Include="Plugins\superslides\libs\jquery-loader.js" />
-    <Content Include="Plugins\superslides\libs\jquery\jquery.js" />
-    <Content Include="Plugins\superslides\libs\qunit\qunit.css" />
-    <Content Include="Plugins\superslides\libs\qunit\qunit.js" />
-    <Content Include="Plugins\superslides\src\core.js" />
-    <Content Include="Plugins\superslides\src\core_outro.js" />
-    <Content Include="Plugins\superslides\src\core_prototype.js" />
-    <Content Include="Plugins\superslides\src\css.js" />
-    <Content Include="Plugins\superslides\src\fx.js" />
-    <Content Include="Plugins\superslides\src\image.js" />
-    <Content Include="Plugins\superslides\src\intro.js" />
-    <Content Include="Plugins\superslides\src\outro.js" />
-    <Content Include="Plugins\superslides\src\pagination.js" />
-    <Content Include="Plugins\superslides\src\plugin.js" />
-    <Content Include="Plugins\superslides\src\setup.js" />
-    <Content Include="Plugins\superslides\test\superslides.html" />
-    <Content Include="Plugins\superslides\test\superslides_test.js" />
     <Content Include="Scripts\bootstrap-lightbox.min.js" />
     <Content Include="Styles\baski.css" />
     <Content Include="Styles\bootstrap-lightbox.min.css" />
@@ -574,6 +512,7 @@
     <Content Include="Views\Default\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\WidgetsController.cs" />
@@ -604,25 +543,6 @@
     <Content Include="Views\web.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Plugins\knob\bower.json" />
-    <Content Include="Plugins\knob\knob.jquery.json" />
-    <Content Include="Plugins\knob\LICENSE" />
-    <Content Include="Plugins\knob\README.md" />
-    <Content Include="Plugins\superslides\.jshintrc" />
-    <Content Include="Plugins\superslides\changelog.md" />
-    <Content Include="Plugins\superslides\CONTRIBUTING.md" />
-    <Content Include="Plugins\superslides\LICENSE-MIT" />
-    <Content Include="Plugins\superslides\package.json" />
-    <Content Include="Plugins\superslides\README.md" />
-    <Content Include="Plugins\superslides\scss\superslides.scss" />
-    <Content Include="Plugins\superslides\src\.jshintrc" />
-    <Content Include="Plugins\superslides\superslides.jquery.json" />
-    <Content Include="Plugins\superslides\test\.jshintrc" />
-    <Content Include="Plugins\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="Plugins\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont.woff" />
@@ -722,8 +642,10 @@
     <Content Include="Areas\Admin\Views\Widgets\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Widgets\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Widgets\List.cshtml" />
+    <None Include="BundleTransformer.Configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\file system.pubxml" />
-    <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
     <Content Include="Views\Shared\_Articles.cshtml" />
