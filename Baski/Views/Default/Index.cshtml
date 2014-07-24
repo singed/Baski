@@ -3,7 +3,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.Sidebar.cshtml";
 }
-@Html.Partial("_RevolutionSlider")
+<div class="row">
+    <div class="col-md-9">
+        @Html.Partial("_RevolutionSlider")
+    </div>
+    <div class="col-md-3">
+        <div class="widget">
+            <h4>Ближайшие игры</h4>
+            <ul>
+                <li> <strong class="styleColor">Баски - Мариам</strong><p><small class="block styleSecondColor">26 июля 2014 /11.30</small></p></li>
+                <li> <strong class="styleColor">Бульдоги - Баски</strong><p><small class="block styleSecondColor">27 июля 2014 /15.00</small></p></li>
+            </ul>
+        </div>
+    </div>
+</div>
 @foreach (var item in Model.Articles)
 {
     Html.RenderPartial("_Articles", item);

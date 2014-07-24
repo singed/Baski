@@ -57,6 +57,10 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -489,6 +493,7 @@
     <Content Include="Images\bkg.jpg" />
     <Content Include="Images\mulyk.jpg" />
     <Content Include="Images\mylyk-defense.jpg" />
+    <Content Include="Images\Players\Davydov.jpg" />
     <Content Include="Images\Roster\Antonuk.jpg" />
     <Content Include="Images\Roster\belyaev.jpg" />
     <Content Include="Images\Roster\Bezkorovayniy.jpg" />
@@ -514,6 +519,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\PlayersController.cs" />
     <Compile Include="Areas\Admin\Controllers\WidgetsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
@@ -641,6 +647,9 @@
     <Content Include="Areas\Admin\Views\Widgets\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Widgets\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Widgets\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Players\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Players\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Players\List.cshtml" />
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>

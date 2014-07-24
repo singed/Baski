@@ -23,14 +23,24 @@ namespace Baski.Orm.Models
 	{
 		[Key]
 		public virtual int Id { get; set; }
-		public virtual string Firstname { get; set; }
-		public virtual string LastName { get; set; }
+        [Required]
+		public virtual string FirstName { get; set; }
+		[Required]
+        public virtual string LastName { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
 		public virtual DateTime Birthdate { get; set; }
 		public virtual int? Height { get; set; }
 		public virtual int? Weight { get; set; }
+        [Required]
 		public virtual string Position { get; set; }
 		public virtual string Description { get; set; }
 		public virtual string ImageUrl { get; set; }
+        public virtual string VkontakteUrl { get; set; }
+        public virtual string FacebookUrl { get; set; }
+        public virtual string InstagramUrl { get; set; }
+        public virtual string TwitterUrl { get; set; }
 	}
 
     /// <summary>

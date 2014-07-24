@@ -1,0 +1,130 @@
+﻿@model Baski.Orm.Models.Player
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактирование</h2>
+
+@using (Html.BeginForm("Edit", "Players", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <div class="form-horizontal">
+        <h4>Статьи</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Firstname">Имя</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LastName">Фамилия</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Birthdate">Дата рождения</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Birthdate)
+                @Html.ValidationMessageFor(model => model.Birthdate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Height">Рост</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Height)
+                @Html.ValidationMessageFor(model => model.Height)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Weight">Вес</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Weight)
+                @Html.ValidationMessageFor(model => model.Weight)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Position">Позиция</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Position)
+                @Html.ValidationMessageFor(model => model.Position)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Description">Описание</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="VkontakteUrl">ссылка на Вконтакте</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VkontakteUrl)
+                @Html.ValidationMessageFor(model => model.VkontakteUrl)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="FacebookUrl">ссылка на Facebook</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacebookUrl)
+                @Html.ValidationMessageFor(model => model.FacebookUrl)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="InstagramUrl">ссылка на Instagram</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InstagramUrl)
+                @Html.ValidationMessageFor(model => model.InstagramUrl)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TwitterUrl">ссылка на Twitter</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TwitterUrl)
+                @Html.ValidationMessageFor(model => model.TwitterUrl)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ImageUrl">Фото</label>
+            <div class="col-md-10">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="~/images/Players/@Model.ImageUrl" width="60" height="60" />
+                    <input type="hidden" name="ImageFileName" value="@Model.ImageUrl"/>
+                }
+                <input type="file" name="ImageUrl" />
+                @Html.ValidationMessageFor(model => model.ImageUrl)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Назад", "Index")
+</div>

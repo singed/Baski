@@ -4,26 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Baski.Authentication;
 using Baski.Configuration;
 using Baski.Orm.Models;
-using Baski.Orm.Repositories;
 
 namespace Baski.Areas.Admin.Controllers
 {
-    [CustomAuthorize(Roles = "Administrator")]
-    public class ArticlesController : AdminBaseController
+    public class PlayersController : AdminBaseController
     {
-        //
-        // GET: /Admin/Article/
         public ActionResult Index()
         {
-            var articlesList = Repository.Articles.All().OrderByDescending(x=>x.Date);
+            var playersList = Repository.Players.All();
 
-            return View("List", articlesList);
+            return View("List", playersList);
         }
 
-        //
         public ActionResult Create()
         {
             return View();
@@ -31,25 +25,31 @@ namespace Baski.Areas.Admin.Controllers
 
         //
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Title, Text, Date, VideoUrl,ImageUrl")] Article article)
+        public ActionResult Create([Bind(Include = "FirstName, LastName, Birthdate, Height, Weight,Position,Description,ImageUrl,VkontakteUrl,FacebookUrl,InstagramUrl,TwitterUrl")] Player player)
         {
             try
             {
                 string fileName = string.Empty;
                 if (Request.Files.Count > 0 && !string.IsNullOrEmpty(Request.Files[0].FileName))
                 {
-                    string path = Server.MapPath(AppSettings.ArticlesImagesPath);
+                    string path = Server.MapPath(AppSettings.PlayersImagesPath);
                     fileName = Path.GetFileName(Request.Files[0].FileName);
                     Request.Files[0].SaveAs(path + fileName);
                 }
                 if (ModelState.IsValid)
                 {
-                    int? id = Repository.Articles.Insert(new
+                    int? id = Repository.Players.Insert(new
                     {
-                        Date= article.Date,
-                        Title = article.Title,
-                        Text= article.Text,
-                        VideoUrl = article.VideoUrl,
+                        Firstname = player.FirstName,
+                        Lastname = player.LastName,
+                        Birthdate = player.Birthdate,
+                        Height = player.Height,
+                        Weight = player.Weight,
+                        Position = player.Position,
+                        VkontakteUrl = player.VkontakteUrl,
+                        FacebookUrl = player.FacebookUrl,
+                        InstagramUrl = player.InstagramUrl,
+                        TwitterUrl = player.TwitterUrl,
                         ImageUrl = fileName
                     });
                     return RedirectToAction("Index");
@@ -68,14 +68,15 @@ namespace Baski.Areas.Admin.Controllers
         // GET: /Admin/Article/Edit/5
         public ActionResult Edit(int id)
         {
-            var article = Repository.Articles.Get(id);
-            return View(article);
+            var player = Repository.Players.Get(id);
+            return View(player);
         }
 
         //
-        // POST: /Admin/Article/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, [Bind(Include = "Title, Text, Date, VideoUrl, ImageUrl")] Article article)
+        public ActionResult Edit(int id, [Bind(Include = "FirstName, LastName, Birthdate, Height, Weight," +
+                                                   "Position,Description,ImageUrl,VkontakteUrl,FacebookUrl," +
+                                                   "InstagramUrl,TwitterUrl")] Player player)
         {
             try
             {
@@ -91,13 +92,19 @@ namespace Baski.Areas.Admin.Controllers
                     fileName = Path.GetFileName(Request.Files[0].FileName);
                     Request.Files[0].SaveAs(path + fileName);
                 }
-                
-                Repository.Articles.Update(id, new
+
+                Repository.Players.Update(id, new
                 {
-                    Date = article.Date,
-                    Title = article.Title,
-                    Text = article.Text,
-                    VideoUrl = article.VideoUrl,
+                    FirstName = player.FirstName,
+                    LastName = player.LastName,
+                    Birthdate = player.Birthdate,
+                    Height = player.Height,
+                    Weight = player.Weight,
+                    Position = player.Position,
+                    VkontakteUrl = player.VkontakteUrl,
+                    FacebookUrl = player.FacebookUrl,
+                    InstagramUrl = player.InstagramUrl,
+                    TwitterUrl = player.TwitterUrl,
                     ImageUrl = fileName
                 });
 
@@ -131,5 +138,5 @@ namespace Baski.Areas.Admin.Controllers
                 return View();
             }
         }
-    }
+	}
 }
