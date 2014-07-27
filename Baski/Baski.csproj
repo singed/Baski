@@ -507,6 +507,7 @@
     <Content Include="Images\Roster\Timofeev.jpg" />
     <Content Include="Images\Roster\Zemlyanskiy.jpg" />
     <Content Include="Images\slidebg1.jpg" />
+    <Content Include="Scripts\baski.js" />
     <Content Include="Scripts\bootstrap-lightbox.min.js" />
     <Content Include="Styles\baski.css" />
     <Content Include="Styles\bootstrap-lightbox.min.css" />
@@ -656,7 +657,7 @@
     <None Include="Properties\PublishProfiles\file system.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
-    <Content Include="Views\Shared\_Articles.cshtml" />
+    <Content Include="Views\Shared\_Article.cshtml" />
     <Content Include="Views\Shared\_Roster.cshtml" />
     <Content Include="Areas\Admin\Views\Articles\Create.cshtml" />
     <Content Include="Views\Shared\LogOn.cshtml" />

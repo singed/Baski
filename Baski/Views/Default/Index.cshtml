@@ -1,4 +1,5 @@
-﻿@model Baski.ViewModels.HomePageViewModel
+﻿@using Baski.Helpers
+@model Baski.ViewModels.HomePageViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.Sidebar.cshtml";
@@ -11,15 +12,22 @@
         <div class="widget">
             <h4>Ближайшие игры</h4>
             <ul>
-                <li> <strong class="styleColor">Баски - Мариам</strong><p><small class="block styleSecondColor">26 июля 2014 /11.30</small></p></li>
-                <li> <strong class="styleColor">Бульдоги - Баски</strong><p><small class="block styleSecondColor">27 июля 2014 /15.00</small></p></li>
+                <li><strong class="styleColor">Баски - Мариам</strong><p><small class="block styleSecondColor">26 июля 2014 /11.30</small></p>
+                </li>
+                <li><strong class="styleColor">Бульдоги - Баски</strong><p><small class="block styleSecondColor">27 июля 2014 /15.00</small></p>
+                </li>
             </ul>
         </div>
     </div>
 </div>
+<hr class="half-margins" />
 @foreach (var item in Model.Articles)
 {
-    Html.RenderPartial("_Articles", item);
+    Html.RenderPartial("_Article", item);
 }
-<hr class="half-margins" />
+
+<div class="clearfix"></div>
+<div class="blog-timeline-load-more load-more" data-more-articles-url="@Url.ArticleUrl()">
+    <button class="btn btn-primary btn-lg">показать еще</button>
+</div>
 <!-- /Articles -->

@@ -28,7 +28,8 @@ namespace Baski.App_Start
                 .Include("~/assets/js/scripts.js")
                 .Include("~/assets/plugins/revolution-slider/js/jquery.themepunch.plugins.min.js")
                 .Include("~/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js")
-                .Include("~/assets/js/slider_revolution.js");
+                .Include("~/assets/js/slider_revolution.js")
+                .Include("~/Scripts/baski.js");
 
             var modernizr = new ScriptBundle("~/bundles/modernizr")
                 .Include("~/assets/plugins/modernizr.min.js");

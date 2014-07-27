@@ -10,12 +10,15 @@ namespace Baski.Controllers
 {
     public class ArticleController : BaseController
     {
-        //
-        // GET: /Article/
         public ActionResult Index(int id)
         {
             Article article = Repository.Articles.Get(id);
             return View(new ArticleViewModel(article));
         }
-	}
+
+        public ActionResult LoadMore()
+        {
+            return null;
+        }
+    }
 }
