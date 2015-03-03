@@ -1,0 +1,13 @@
+*.svn-base
+/Baski/Authentication/.svn/entries
+/Baski/Authentication/Models/.svn/entries
+/Baski/Properties/PublishProfiles/file system.pubxml
+/Baski/Properties/PublishProfiles/file system.pubxml.user
+/packages/Dapper.SimpleCRUD.ModelGenerator.1.0.2/Content/Models/ModelGenerator.tt.pp
+/packages/Dapper.SimpleCRUD.ModelGenerator.1.0.2/Dapper.SimpleCRUD.ModelGenerator.1.0.2.nupkg
+/packages/Dapper.SimpleCRUD.ModelGenerator.1.0.2/Dapper.SimpleCRUD.ModelGenerator.1.0.2.nuspec
+*.nupkg
+BundleTransformer.Core.1.9.5
+YUICompressor.NET.2.4.0.0
+/packages/BundleTransformer.Yui.1.9.1
+/packages/YUICompressor.NET.Web.Optimization.2.4.0.0

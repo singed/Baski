@@ -77,6 +77,7 @@
     </Reference>
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -651,9 +652,6 @@
     <Content Include="Areas\Admin\Views\Players\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Players\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Players\List.cshtml" />
-    <None Include="BundleTransformer.Configuration.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\PublishProfiles\file system.pubxml" />
     <Content Include="Views\Shared\_TwitterWidget.cshtml" />
     <Content Include="Views\Shared\_FollowUs.cshtml" />
@@ -666,6 +664,7 @@
     <Content Include="Views\Shared\_Layout.Sidebar.cshtml" />
     <Content Include="Views\Shared\_VkWidgetNews.cshtml" />
     <Content Include="Views\Widget\Sidebar.cshtml" />
+    <Content Include="Views\Default\LoadMore.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

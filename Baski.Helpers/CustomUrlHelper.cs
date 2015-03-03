@@ -14,5 +14,10 @@ namespace Baski.Helpers
         {
             return helper.RouteUrl("Article", new {id = id});
         }
+
+        public static string LoadMore(this UrlHelper helper, int page)
+        {
+            return helper.RouteUrl("LoadMore", new { page = page });
+        }
     }
 }

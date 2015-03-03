@@ -12,12 +12,17 @@ namespace Baski
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-        
+
             routes.MapRoute(
               name: "Article",
               url: "Article/{id}",
-              defaults: new { controller = "Article", action = "Index", id=UrlParameter.Optional }
-          );
+              defaults: new { controller = "Article", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+              name: "LoadMore",
+              url: "LoadMore/{page}",
+              defaults: new { controller = "Default", action = "LoadMore", page = UrlParameter.Optional }
+            );
             routes.MapRoute(
                name: "Statistics",
                url: "Statistics",
@@ -33,7 +38,7 @@ namespace Baski
                 url: "Roster",
                 defaults: new { controller = "Default", action = "Roster" }
             );
-        
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -42,6 +43,25 @@ namespace Baski.Controllers
             FooterViewModel model = new FooterViewModel();
             model.Articles = Repository.Articles.All().OrderByDescending(x=>x.Date).Select(x=>new ArticleViewModel(x));
             return View(model);
+        }
+
+        public ActionResult LoadMore(int page)
+        {
+            var articles = Repository.Articles.All().ToList().Select(x=> new ArticleViewModel(x));
+            ViewBag.Page = page + 1;
+            return View("LoadMore", articles);
+            /*var articles = Repository.Articles.All().Skip(3 * page).ToList();
+            ViewData.Model = articles;
+            using (var sw = new StringWriter())
+            {
+                var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext,
+                                                                         "_Article");
+                var viewContext = new ViewContext(ControllerContext, viewResult.View,
+                                             ViewData, TempData, sw);
+                viewResult.View.Render(viewContext, sw);
+                viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+                return sw.GetStringBuilder().ToString();
+            }*/
         }
     }
 }

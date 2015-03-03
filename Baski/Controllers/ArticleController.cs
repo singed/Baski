@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,11 +15,6 @@ namespace Baski.Controllers
         {
             Article article = Repository.Articles.Get(id);
             return View(new ArticleViewModel(article));
-        }
-
-        public ActionResult LoadMore()
-        {
-            return null;
         }
     }
 }
